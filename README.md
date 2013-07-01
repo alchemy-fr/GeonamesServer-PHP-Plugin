@@ -1,0 +1,44 @@
+# Geonames API Connector
+
+This is a consumer for the [GeonamesServer](https://github.com/alchemy-fr/GeonamesServer).
+
+## Usage
+
+ - Connector creation :
+
+```php
+$connector = ALchemy\Geonames\Connector::create($serverUrl);
+```
+
+ - Query cities :
+
+```php
+// returns an array of Alchemy\Geonames\Geoname objects
+$geonames = $connector->search('Paris');
+```
+
+Query options :
+
+```php
+// limit to 50 results
+// use '89.73.4.152' as IP address for closeness sort
+$connector->search('Paris', 50, '89.73.4.152');
+```
+
+ - Find by IP :
+
+```php
+// returns a Alchemy\Geonames\Geoname object
+$geoname = $connector->ip('89.73.4.152');
+```
+
+ - Find a GeonameId :
+
+```php
+// returns a Alchemy\Geonames\Geoname object
+$geoname = $connector->geoname(2988507);
+```
+
+## License
+
+This project is released under the MIT License.

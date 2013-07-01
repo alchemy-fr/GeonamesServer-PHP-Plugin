@@ -1,0 +1,35 @@
+{
+    "score": 581701.56,
+    "geonameid": 2992090,
+    "name": "Montreuil",
+    "country": {
+      "name": "France",
+      "code": "FR"
+    },
+    "timezone": "Europe/Paris",
+    "feature": {
+      "class": "P",
+      "code": "PPL"
+    },
+    "population": 90652,
+    "location": {
+      "latitude": 48.86415,
+      "longitude": 2.44322
+    },
+    "names": [
+      "montreuil",
+      "montrej",
+      "montreuil",
+      "montreuil-sous-bois",
+      "монтрей"
+    ],
+    "admin1Code": "A8",
+    "admin2Code": 93,
+    "admin3Code": 931,
+    "admin4Code": 93048,
+    "updatedOn": "2012-01-18",
+    "region": {
+      "code": "FR.A8",
+      "name": "Île-de-France"
+    }
+}
