@@ -81,7 +81,7 @@ class Connector
      */
     public function geoname($geonameId)
     {
-        return new Geoname($this->get('city/'.(int)$geonameId));
+        return new Geoname($this->get('city/'.(int) $geonameId));
     }
 
     /**
