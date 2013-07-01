@@ -1,5 +1,7 @@
 # Geonames API Connector
 
+[![Build Status](https://travis-ci.org/alchemy-fr/GeonamesServer-PHP-Plugin.png?branch=master)](https://travis-ci.org/alchemy-fr/GeonamesServer-PHP-Plugin)
+
 This is a consumer for the [GeonamesServer](https://github.com/alchemy-fr/GeonamesServer).
 
 ## Usage
