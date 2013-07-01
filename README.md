@@ -41,6 +41,15 @@ $geoname = $connector->ip('89.73.4.152');
 $geoname = $connector->geoname(2988507);
 ```
 
+## Silex Service Provider
+
+```php
+$app = new Silex\Application();
+$app->register(new Alchemy\Geonames\GeonamesServiceProvider(), array(
+    'geonames.server-uri' => 'http://geonames.domain.tld',  // mandatory parameter
+));
+```
+
 ## License
 
 This project is released under the MIT License.
