@@ -209,9 +209,48 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->method('getQuery')
             ->will($this->returnValue($query));
 
+        $exception = new ClientErrorResponseException('Invalid resource');
+        $exception->setResponse(new Response(404));
+
         $request->expects($this->once())
             ->method('send')
-            ->will($this->throwException(new ClientErrorResponseException('Invalid resource')));
+            ->will($this->throwException($exception));
+
+        $query->expects($this->exactly(1))
+            ->method('add')
+            ->with('ip', '66.6.6.6');
+
+        $guzzle->expects($this->once())
+            ->method('get')
+            ->with('http://geoloc.com/ip', array('accept' => 'application/json'))
+            ->will($this->returnValue($request));
+
+        $connector = new Connector($guzzle, 'http://geoloc.com/');
+        $connector->ip('66.6.6.6');
+    }
+
+    /**
+     * @expectedException Alchemy\Geonames\Exception\TransportException
+     */
+    public function testIPWithGuzzleClientExceptionForbidden()
+    {
+        $guzzle = $this->getMockBuilder('Guzzle\Http\Client')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $query = $this->getMock('Guzzle\Http\QueryString');
+
+        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request->expects($this->exactly(1))
+            ->method('getQuery')
+            ->will($this->returnValue($query));
+
+        $exception = new ClientErrorResponseException('Invalid resource');
+        $exception->setResponse(new Response(403));
+
+        $request->expects($this->once())
+            ->method('send')
+            ->will($this->throwException($exception));
 
         $query->expects($this->exactly(1))
             ->method('add')

@@ -123,7 +123,10 @@ class Connector
         try {
             $result = json_decode($request->send()->getBody(true), true);
         } catch (ClientErrorResponseException $e) {
-            throw new NotFoundException('Resource not found', $e->getCode(), $e);
+            if (404 === $e->getResponse()->getStatusCode()) {
+                throw new NotFoundException('Resource not found', $e->getCode(), $e);
+            }
+            throw new TransportException('Failed to execute query', $e->getCode(), $e);
         } catch (GuzzleException $e) {
             throw new TransportException('Failed to execute query', $e->getCode(), $e);
         }
