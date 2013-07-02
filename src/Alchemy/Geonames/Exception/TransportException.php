@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Alchemy\Geonames;
+namespace Alchemy\Geonames\Exception;
 
-class Exception extends \Exception
+class TransportException extends \Exception implements ExceptionInterface
 {
 }

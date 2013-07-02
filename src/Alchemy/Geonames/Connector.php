@@ -14,6 +14,9 @@ namespace Alchemy\Geonames;
 use Guzzle\Http\Client;
 use Guzzle\Http\ClientInterface;
 use Guzzle\Common\Exception\GuzzleException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use Alchemy\Geonames\Exception\TransportException;
+use Alchemy\Geonames\Exception\NotFoundException;
 
 class Connector
 {
@@ -104,7 +107,8 @@ class Connector
      *
      * @return array
      *
-     * @throws Exception
+     * @throws NotFoundException
+     * @throws TransportException
      */
     private function get($endPoint, array $queryParameters = array())
     {
@@ -118,12 +122,14 @@ class Connector
 
         try {
             $result = json_decode($request->send()->getBody(true), true);
+        } catch (ClientErrorResponseException $e) {
+            throw new NotFoundException('Resource not found', $e->getCode(), $e);
         } catch (GuzzleException $e) {
-            throw new Exception('Failed to execute query', $e->getCode(), $e);
+            throw new TransportException('Failed to execute query', $e->getCode(), $e);
         }
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            throw new Exception('Unable to parse result');
+            throw new TransportException('Unable to parse result');
         }
 
         return $result;
