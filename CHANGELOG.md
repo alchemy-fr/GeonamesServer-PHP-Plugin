@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.1.2 (2014-xx-xx)
+
+  * Add support for Monolog logger.
+
 ### 0.1.1 (2012-07-02)
 
   * Add better support for HTTP errors.
