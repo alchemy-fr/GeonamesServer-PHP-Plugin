@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### 0.1.2 (2014-xx-xx)
+### 0.1.2 (2014-02-05)
 
   * Add support for Monolog logger.
 
