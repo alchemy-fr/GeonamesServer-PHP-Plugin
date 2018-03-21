@@ -153,7 +153,7 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Alchemy\Geonames\Exception\TransportException
+     * @expectedException \Alchemy\Geonames\Exception\TransportException
      */
     public function testIPWithInvalidResponse()
     {
@@ -194,7 +194,7 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Alchemy\Geonames\Exception\NotFoundException
+     * @expectedException \Alchemy\Geonames\Exception\NotFoundException
      */
     public function testIPWithGuzzleClientException()
     {
@@ -230,7 +230,7 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Alchemy\Geonames\Exception\TransportException
+     * @expectedException \Alchemy\Geonames\Exception\TransportException
      */
     public function testIPWithGuzzleClientExceptionForbidden()
     {
@@ -266,7 +266,7 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Alchemy\Geonames\Exception\TransportException
+     * @expectedException \Alchemy\Geonames\Exception\TransportException
      */
     public function testIPWithGuzzleServerException()
     {
