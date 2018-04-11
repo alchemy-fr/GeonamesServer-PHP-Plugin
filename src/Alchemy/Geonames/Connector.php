@@ -38,7 +38,7 @@ class Connector
      *
      * @return array
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function search($place, $limit = 40, $clientIp = null)
     {
@@ -66,7 +66,7 @@ class Connector
      *
      * @return Geoname
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function ip($ip)
     {
@@ -80,7 +80,7 @@ class Connector
      *
      * @return Geoname
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function geoname($geonameId)
     {
@@ -90,7 +90,7 @@ class Connector
     /**
      * Creates a Connector.
      *
-     * @param type $serverUri
+     * @param string $serverUri
      *
      * @return Connector
      */
