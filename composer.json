@@ -4,9 +4,9 @@
     "keywords": ["geonames"],
     "license": "MIT",
     "require": {
-        "php"               : "~7.0",
-        "guzzle/guzzle" : "~3.0",
-        "silex/silex"       : "~2.0"
+        "php"             : "~7.0",
+        "guzzle/guzzle"   : "~3.5",
+        "silex/silex"     : "~2.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "~6.0"
