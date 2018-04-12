@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php"               : "~7.0",
-        "guzzlehttp/guzzle" : "~3.5",
+        "guzzlehttp/guzzle" : "~6.0",
         "silex/silex"       : "~2.0"
     },
     "require-dev": {
