@@ -9,8 +9,9 @@ use Guzzle\Http\Message\Response;
 use Alchemy\Geonames\Geoname;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Guzzle\Http\Exception\ServerErrorResponseException;
+use \PHPUnit\Framework\TestCase;
 
-class ConnectorTest extends \PHPUnit_Framework_TestCase
+class ConnectorTest extends TestCase
 {
     public function testSearchShouldReturnResults()
     {
@@ -30,9 +31,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(4))
             ->method('getQuery')
             ->will($this->returnValue($query));
@@ -78,7 +79,7 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->never())
             ->method('getQuery');
 
@@ -120,9 +121,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(1))
             ->method('getQuery')
             ->will($this->returnValue($query));
@@ -161,9 +162,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(1))
             ->method('getQuery')
             ->will($this->returnValue($query));
@@ -202,9 +203,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(1))
             ->method('getQuery')
             ->will($this->returnValue($query));
@@ -238,9 +239,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(1))
             ->method('getQuery')
             ->will($this->returnValue($query));
@@ -274,9 +275,9 @@ class ConnectorTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $query = $this->getMock('Guzzle\Http\QueryString');
+        $query = $this->createMock('Guzzle\Http\QueryString');
 
-        $request = $this->getMock('Guzzle\Http\Message\RequestInterface');
+        $request = $this->createMock('Guzzle\Http\Message\RequestInterface');
         $request->expects($this->exactly(1))
             ->method('getQuery')
             ->will($this->returnValue($query));

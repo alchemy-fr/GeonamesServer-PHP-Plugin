@@ -4,8 +4,9 @@ namespace Alchemy\Tests\Geonames;
 
 use Alchemy\Geonames\GeonamesServiceProvider;
 use Silex\Application;
+use \PHPUnit\Framework\TestCase;
 
-class geonamesServiceProviderTest extends \PHPUnit_Framework_TestCase
+class geonamesServiceProviderTest extends TestCase
 {
     public function testRegister()
     {

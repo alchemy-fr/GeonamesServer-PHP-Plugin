@@ -3,8 +3,9 @@
 namespace Alchemy\Tests\Geonames;
 
 use Alchemy\Geonames\Geoname;
+use \PHPUnit\Framework\TestCase;
 
-class GeonameTest extends \PHPUnit_Framework_TestCase
+class GeonameTest extends TestCase
 {
     public function testGetter()
     {
