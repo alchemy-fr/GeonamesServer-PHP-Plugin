@@ -36,14 +36,14 @@ class GeonamesServiceProvider implements ServiceProviderInterface
             throw new \RuntimeException('You must set `geonames.server-uri`.');
         }
 
-        if (isset($app['monolog'])) {
-            $app['geonames.guzzle-client'] = $app->share(
-                $app->extend('geonames.guzzle-client', function (Client $client, Application $app) {
-                    $client->addSubscriber(new LogPlugin(new PsrLogAdapter($app['monolog']), MessageFormatter::DEBUG_FORMAT));
-
-                    return $client;
-                })
-            );
-        }
+//        if (isset($app['monolog'])) {
+//            $app['geonames.guzzle-client'] = $app->share(
+//                $app->extend('geonames.guzzle-client', function (Client $client, Application $app) {
+//                    $client->addSubscriber(new LogPlugin(new PsrLogAdapter($app['monolog']), MessageFormatter::DEBUG_FORMAT));
+//
+//                    return $client;
+//                })
+//            );
+//        }
     }
 }
